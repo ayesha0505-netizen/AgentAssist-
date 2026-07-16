@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HelpFlow AI | Editorial Evolution</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#00424e",
+                        "surface-tint": "#c3c0ff",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-bright": "#363940",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-tertiary-fixed": "#002113",
+                        "inverse-surface": "#e0e2eb",
+                        "primary-container": "#4f46e5",
+                        "on-surface": "#e0e2eb",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "surface-dim": "#10131a",
+                        "surface-container-high": "#272a31",
+                        "secondary": "#4cd7f6",
+                        "on-primary": "#1d00a5",
+                        "tertiary": "#4edea3",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary": "#003824",
+                        "primary-fixed": "#e2dfff",
+                        "inverse-primary": "#4d44e3",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "secondary-container": "#03b5d3",
+                        "background": "#10131a",
+                        "outline-variant": "#464555",
+                        "outline": "#918fa1",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#003640",
+                        "on-primary-container": "#dad7ff",
+                        "primary": "#c3c0ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#0f0069",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed": "#acedff",
+                        "surface-container-highest": "#32353c",
+                        "surface-container": "#1d2026",
+                        "on-secondary-fixed": "#001f26",
+                        "inverse-on-surface": "#2d3037",
+                        "on-background": "#e0e2eb",
+                        "on-tertiary-container": "#67f4b7",
+                        "on-surface-variant": "#c7c4d8",
+                        "surface": "#10131a",
+                        "tertiary-container": "#006e4b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "technical-label": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "technical-code": ["JetBrains Mono"],
+                        "body-base": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "editorial": ["Playfair Display", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(195, 192, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-white">
+<!-- Shared Header Logic: Included as it is a Destination screen -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-[#131221] dark group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="px-10 md:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#272546] px-4 md:px-10 py-3 mb-12">
+                    <div class="flex items-center gap-4 text-white">
+                        <div class="size-6">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">HelpFlow AI</h2>
+                    </div>
+                    <div class="hidden md:flex flex-1 justify-end gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Vision</a>
+                            <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Evolution</a>
+                            <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Partnership</a>
+                            <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+                        </div>
+                        <button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary-container text-white text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 active:scale-95">
+                            <span class="truncate">Inquire</span>
+                        </button>
+                    </div>
+                </header>
+                <!-- Narrative Hero -->
+                <main class="flex flex-col gap-32 pb-40">
+                    <section class="flex flex-col items-center text-center px-4">
+                        <div class="mb-12 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-low text-primary text-xs font-technical-label">
+                            <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                            <span>THE NEXT DIMENSION OF ENTERPRISE</span>
+                        </div>
+                        <h1 class="text-white text-6xl md:text-8xl font-editorial italic leading-tight max-w-5xl tracking-tight mb-8 reveal-on-scroll text-glow">
+                            The Silent Pulse of <span class="text-primary font-normal">Evolution</span>
+                        </h1>
+                        <p class="text-on-surface-variant text-xl md:text-2xl font-light leading-relaxed max-w-3xl mb-12 reveal-on-scroll">
+                            We are moving beyond automation into the realm of pure operational intuition. HelpFlow AI is the invisible conductor of your digital transformation.
+                        </p>
+                        <div class="flex gap-4 reveal-on-scroll">
+                            <button class="h-16 px-10 bg-primary-container text-white rounded-xl font-bold text-lg hover:shadow-[0_0_30px_-5px_rgba(79,70,229,0.5)] transition-all">
+                                Begin the Journey
+                            </button>
+                            <button class="h-16 px-10 border border-outline text-white rounded-xl font-bold text-lg hover:bg-surface-container transition-all">
+                                Our Philosophy
+                            </button>
+                        </div>
+                    </section>
+                    <!-- Cinematic Visual Break -->
+                    <section class="relative w-full h-[819px] flex items-center justify-center overflow-hidden rounded-3xl reveal-on-scroll bg-gradient-to-br from-[#1d2026] via-[#10131a] to-[#0b0e14]">
+                        <div class="absolute inset-0 z-0">
+                            <webgl-shader class="w-full h-full" src="{{DATA:ANIMATION:ANIMATION_1}}"></webgl-shader>
+                            <!-- Visual fallback gradient aura -->
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-primary-container/30 via-secondary/15 to-transparent rounded-full blur-[140px] pointer-events-none animate-pulse"></div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                        <div class="relative z-10 text-center max-w-4xl px-6">
+                            <h2 class="text-4xl md:text-6xl font-editorial text-white mb-6">Autonomous Orchestration</h2>
+                            <p class="text-lg text-primary uppercase tracking-[0.3em] font-technical-label">Seamless. Invisible. Omnipresent.</p>
+                        </div>
+                    </section>
+                    <!-- Narrative Chapter 1: The Integration -->
+                    <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-4">
+                        <div class="reveal-on-scroll">
+                            <div class="text-primary font-technical-label mb-4">CHAPTER 01</div>
+                            <h2 class="text-5xl md:text-7xl font-editorial text-white mb-8">Deep Infrastructure <br/><span class="italic">Synergy</span></h2>
+                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                                HelpFlow AI doesn't sit on top of your stack; it breathes within it. Like an organic extension of your nervous system, it identifies friction points before they manifest as delays.
+                            </p>
+                            <ul class="space-y-6">
+                                <li class="flex gap-4">
+                                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">lens</span>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-1">Subconscious Efficiency</h4>
+                                        <p class="text-on-surface-variant text-sm">Adaptive loops that learn from every enterprise transaction.</p>
+                                    </div>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">lens</span>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-1">Neural Topology</h4>
+                                        <p class="text-on-surface-variant text-sm">Visualizing the flow of data through complex corporate hierarchies.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="relative group reveal-on-scroll">
+                            <div class="absolute -inset-4 bg-primary/20 blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                            <div class="relative rounded-2xl overflow-hidden aspect-square border border-outline-variant">
+                                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDKUq0XtaiBy0hoMt0ghnWh41ydKp95HS3ecLK587Z82TC-K4SFqq7E_4WHjedX4YJd_7o_T-QiZEqSXSljNtpOajB-KVDik3utFbuKwtDdH069MOTIQfOAIkoDRiaNYakeGE-t6aJJk4kD7kZhNAfT8vtWnbdwx0gxDlYE62TDsPxyyAbZvKsreAqzuTqTofqb4EOWqfMv86Wh5dFqRVWv96T-AdTaAtCv627nDaqojOLv1IjNEfI0g')"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Chapter 2: The Vision -->
+                    <section class="flex flex-col items-center reveal-on-scroll">
+                        <div class="max-w-4xl text-center">
+                            <div class="text-primary font-technical-label mb-4">CHAPTER 02</div>
+                            <h2 class="text-5xl md:text-7xl font-editorial text-white mb-12">Cognitive <span class="italic">Dominance</span></h2>
+                            <div class="aspect-video w-full rounded-3xl overflow-hidden border border-outline-variant bg-surface-dim mb-12 relative">
+                                <threejs-scene class="absolute inset-0 w-full h-full" src="{{DATA:ANIMATION:ANIMATION_2}}"></threejs-scene>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 via-surface-dim to-transparent pointer-events-none"></div>
+                                <div class="absolute inset-0 flex items-center justify-center bg-background/40 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity cursor-pointer">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-xl leading-relaxed italic">
+                                "The true sign of intelligence is not knowledge, but the ability to anticipate the future without being told it exists."
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Chapter 3: The Impact -->
+                    <section class="grid grid-cols-1 md:grid-cols-3 gap-12 px-4 reveal-on-scroll">
+                        <div class="p-10 rounded-3xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all">
+                            <div class="text-4xl font-editorial text-white mb-4">42%</div>
+                            <div class="text-primary text-xs font-technical-label mb-6">LATENCY REDUCTION</div>
+                            <p class="text-on-surface-variant text-sm">We remove the ghost in the machine, streamlining complex operations into a single fluid motion.</p>
+                        </div>
+                        <div class="p-10 rounded-3xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all">
+                            <div class="text-4xl font-editorial text-white mb-4">12.4x</div>
+                            <div class="text-primary text-xs font-technical-label mb-6">ITERATION SPEED</div>
+                            <p class="text-on-surface-variant text-sm">Develop, test, and deploy with the speed of thought. Innovation at the pace of modern demand.</p>
+                        </div>
+                        <div class="p-10 rounded-3xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all">
+                            <div class="text-4xl font-editorial text-white mb-4">0.0ms</div>
+                            <div class="text-primary text-xs font-technical-label mb-6">DECISION LAG</div>
+                            <p class="text-on-surface-variant text-sm">When data flows without friction, decisions happen in real-time. Predict, don't react.</p>
+                        </div>
+                    </section>
+                    <!-- Final CTA -->
+                    <section class="relative py-40 rounded-[3rem] overflow-hidden flex flex-col items-center justify-center text-center px-6 reveal-on-scroll">
+                        <div class="absolute inset-0 z-0">
+                            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCD7i8GtqBgUTvDOf7vwJ4NJZ3J4Xyd1YzHI4vRmpu1QrI8X0se8NxZv2qS6PfRAAQ-raAsEbPX6SVuV_QIWm2uWlRzcd8yLL9wBcaJCM3Emhh3gUlb65-RACPB-JmXJ1jXsEmWFIwS4XtEByiNep1AYXn0cUoE05zqhwdLr2vnVGK93QdlhCR7QHCNiU4mjQlviE5XYxuzL3IFnmJFVq4khS3-V8F2aysvSt7RaIDBwknnpUy2LzDm4g')"></div>
+                            <div class="absolute inset-0 bg-background/60"></div>
+                        </div>
+                        <div class="relative z-10">
+                            <h2 class="text-6xl md:text-8xl font-editorial italic text-white mb-12">Join the <span class="text-primary">Synergy</span></h2>
+                            <p class="text-on-surface-variant text-xl max-w-2xl mx-auto mb-16">
+                                The future of enterprise is not built on tools, but on the connection between them. Experience the silent evolution of HelpFlow AI.
+                            </p>
+                            <button class="h-20 px-16 bg-white text-background rounded-full font-bold text-xl hover:bg-primary-fixed transition-colors">
+                                Request Access
+                            </button>
+                        </div>
+                    </section>
+                </main>
+                <footer class="border-t border-outline-variant py-20 px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-3 text-white mb-8">
+                            <div class="size-6">
+                                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-xl font-bold">HelpFlow AI</h2>
+                        </div>
+                        <p class="text-on-surface-variant max-w-xs leading-relaxed">
+                            Designing the underlying intelligence of tomorrow's Fortune 100 organizations.
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold mb-6">Ecosystem</h5>
+                        <ul class="space-y-4 text-on-surface-variant text-sm">
+                            <li><a class="hover:text-primary transition-colors" href="#">Vision</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Evolution</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Partnership</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Infrastructure</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold mb-6">Connect</h5>
+                        <ul class="space-y-4 text-on-surface-variant text-sm">
+                            <li><a class="hover:text-primary transition-colors" href="#">X / Twitter</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Inquire</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelectorAll('.parallax-bg').forEach(bg => {
+            const speed = 0.5;
+            bg.style.backgroundPositionY = (scrolled * speed) + 'px';
+        });
+    });
+</script>
+</body>
+</html>

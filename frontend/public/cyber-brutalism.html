@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HelpFlow AI | CYBER-BRUTALISM</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Plus+Jakarta+Sans:wght@800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "brutal-black": "#0a0a0a",
+                        "brutal-charcoal": "#1a1a1a",
+                        "neon-lime": "#ccff00",
+                        "neon-pink": "#ff00ff",
+                        "neon-blue": "#00f0ff",
+                        "primary": "#ccff00", // Mapping for consistency
+                        "secondary": "#00f0ff",
+                        "tertiary": "#ff00ff",
+                        "on-surface": "#ffffff",
+                        "outline": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "none": "0",
+                        "DEFAULT": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "xl": "40px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter", "sans-serif"],
+                        "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "technical-label": ["JetBrains Mono", "monospace"],
+                        "technical-code": ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brutal-border {
+            border: 4px solid #ffffff;
+            box-shadow: 8px 8px 0px 0px #00f0ff;
+        }
+
+        .brutal-border-lime {
+            border: 4px solid #ccff00;
+            box-shadow: 8px 8px 0px 0px #ffffff;
+        }
+
+        .brutal-border-pink {
+            border: 4px solid #ff00ff;
+            box-shadow: -8px 8px 0px 0px #ccff00;
+        }
+
+        .brutal-btn {
+            background: #ffffff;
+            color: #000;
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px 0px #ff00ff;
+            transition: all 0.1s;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .brutal-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px 0px #ccff00;
+        }
+
+        .brutal-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        .glitch-text {
+            position: relative;
+            text-shadow: 3px 0 #ff00ff, -3px 0 #00f0ff;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            background: #ccff00;
+            color: #000;
+            padding: 8px 0;
+            font-family: 'JetBrains Mono';
+            font-weight: 900;
+            border-top: 4px solid #000;
+            border-bottom: 4px solid #000;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .bg-stripes {
+            background-image: repeating-linear-gradient(45deg, #1a1a1a 0, #1a1a1a 10px, #0a0a0a 10px, #0a0a0a 20px);
+        }
+    </style>
+</head>
+<body class="font-body-base bg-stripes">
+<div class="grain-overlay"></div>
+<!-- Top Navigation -->
+<header class="sticky top-0 z-[100] bg-brutal-black border-b-[6px] border-white">
+    <div class="flex justify-between items-center px-lg py-md">
+        <span class="font-black text-3xl tracking-tighter italic uppercase text-neon-lime bg-white px-2 text-black">HelpFlow AI</span>
+        <nav class="hidden lg:flex gap-lg font-black uppercase text-sm">
+            <a class="hover:bg-neon-pink hover:text-black px-2" href="#">Platform</a>
+            <a class="hover:bg-neon-blue hover:text-black px-2" href="#">Solutions</a>
+            <a class="hover:bg-neon-lime hover:text-black px-2" href="#">Resources</a>
+            <a class="hover:bg-white hover:text-black px-2" href="#">Pricing</a>
+        </nav>
+        <div class="flex gap-md">
+            <button class="font-black uppercase border-2 border-white px-md py-sm hover:invert">Sign In</button>
+            <button class="brutal-btn px-lg py-sm text-sm">Deploy Agent</button>
+        </div>
+    </div>
+</header>
+<main class="relative px-margin py-xl overflow-x-hidden">
+    <!-- Hero Section: Non-Linear -->
+    <section class="asymmetric-grid mb-32">
+        <div class="col-span-12 lg:col-span-8 z-10">
+            <div class="bg-neon-blue text-black inline-block px-4 py-1 font-black uppercase mb-md brutal-border-lime">
+                Status: Experimental_v09
+            </div>
+            <h1 class="glitch-text font-black text-6xl md:text-8xl lg:text-9xl uppercase mb-lg leading-[0.85] text-white">
+                Autonomous<br/>
+                Customer<br/>
+                <span class="text-neon-lime">Engineering</span>
+            </h1>
+        </div>
+        <!-- Overlapping Float Item -->
+        <div class="col-span-12 lg:col-span-4 lg:-ml-24 lg:mt-32">
+            <div class="brutal-border-pink bg-brutal-charcoal p-lg rotate-2 hover:rotate-0 transition-transform">
+                <p class="font-black text-xl uppercase mb-md leading-tight">
+                    Powered by <span class="bg-white text-black px-1">ReAct &amp; RAG</span>
+                </p>
+                <p class="text-on-surface mb-lg font-bold">
+                    Deploy stateful AI agents that reason, plan, and execute. High-precision engineering at the edge.
+                </p>
+                <div class="flex flex-col gap-sm">
+                    <button class="brutal-btn py-md w-full text-lg">Launch Sandbox</button>
+                    <button class="font-black uppercase text-neon-blue hover:underline">View Architecture -&gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Marquee -->
+    <div class="marquee mb-32 -mx-margin rotate-1">
+        <div class="marquee-content uppercase">
+            GEMINI PRO ENGINE // SUB-100MS FAISS SEARCH // AUTONOMOUS SQL TOOLS // SOC-2 COMPLIANT // NO-CODE PLAYGROUND // PERSISTENT EMBEDDINGS // GEMINI PRO ENGINE // SUB-100MS FAISS SEARCH // AUTONOMOUS SQL TOOLS // 
+        </div>
+    </div>
+    <!-- Pillar Section: Asymmetric & Non-Linear -->
+    <section class="mb-32 relative">
+        <div class="mb-xl">
+            <h2 class="text-5xl font-black uppercase italic text-neon-pink">Core_Capabilities</h2>
+            <div class="w-full h-2 bg-white mt-sm"></div>
+        </div>
+        <div class="asymmetric-grid">
+            <!-- Pillar 1 -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 brutal-border bg-brutal-black p-lg hover:-translate-y-2 transition-all">
+                <div class="text-neon-lime mb-md">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+                <h3 class="text-2xl font-black uppercase mb-sm">ReAct State Machine</h3>
+                <p class="text-sm font-bold text-gray-400 mb-lg">Proprietary reasoning engine that forces agents to "think" before acting. Hallucination: 0.01%.</p>
+                <div class="bg-white text-black text-[10px] font-black p-1 uppercase inline-block">Chain-of-thought</div>
+            </div>
+            <!-- Pillar 2 -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 brutal-border-lime bg-white p-lg -mt-8 md:mt-8 rotate-1">
+                <div class="text-brutal-black mb-md">
+                    <span class="material-symbols-outlined text-4xl">storage</span>
+                </div>
+                <h3 class="text-2xl font-black uppercase mb-sm text-black">Local FAISS Vector Store</h3>
+                <p class="text-sm font-bold text-black mb-lg">Ultra-low latency retrieval-augmented generation using localized vector databases.</p>
+                <div class="bg-neon-pink text-white text-[10px] font-black p-1 uppercase inline-block">Sub-100ms Latency</div>
+            </div>
+            <!-- Pillar 3 -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 brutal-border-pink bg-brutal-charcoal p-lg lg:-mt-12">
+                <div class="text-neon-blue mb-md">
+                    <span class="material-symbols-outlined text-4xl">hub</span>
+                </div>
+                <h3 class="text-2xl font-black uppercase mb-sm text-neon-blue">Autonomous Tools</h3>
+                <p class="text-sm font-bold text-gray-300 mb-lg">Agents execute SQL, call APIs, and spreadsheets without human intervention.</p>
+                <div class="border border-white text-white text-[10px] font-black p-1 uppercase inline-block">SOC-2 Compliant</div>
+            </div>
+            <!-- Pillar 4 -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-2 brutal-border bg-neon-lime p-lg lg:mt-16 -rotate-2">
+                <div class="text-black mb-md">
+                    <span class="material-symbols-outlined text-4xl">history_edu</span>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-sm text-black">Multi-turn Memory</h3>
+                <p class="text-[12px] font-black text-black">Entity-level tracking across long sessions.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Trace Preview -->
+    <section class="mb-32">
+        <div class="brutal-border-lime bg-brutal-black overflow-hidden">
+            <div class="bg-white p-sm flex justify-between items-center">
+                <div class="flex gap-sm">
+                    <div class="w-4 h-4 bg-brutal-black"></div>
+                    <div class="w-4 h-4 bg-neon-pink"></div>
+                    <div class="w-4 h-4 bg-neon-blue"></div>
+                </div>
+                <span class="font-black text-black uppercase text-xs tracking-widest italic">TRACE // active_session_092</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-lg font-technical-code text-sm border-r-4 border-white bg-black">
+                    <div class="space-y-sm text-neon-lime" id="agent-logs">
+                        <p class="text-white opacity-50">[09:42:01] &gt; Query: "Where is my order #HF-9921?"</p>
+                        <p class="font-bold text-neon-blue underline">[THOUGHT] Fetching order details. Executing tool: CheckOrderTool.</p>
+                        <div class="pl-md border-l-4 border-neon-pink py-sm">
+                            <p>ACTION: CheckOrderTool</p>
+                            <p>OBSERVATION: Status: Shipped. Carrier: FedEx.</p>
+                        </div>
+                        <p class="font-bold text-neon-blue underline">[THOUGHT] Cross-referencing shipping timelines in RAG.</p>
+                    </div>
+                </div>
+                <div class="bg-neon-blue/10 p-lg flex flex-col justify-center items-center gap-lg">
+                    <div class="brutal-border bg-white p-md text-black font-black uppercase w-full text-center">
+                        Tool: CheckOrderTool
+                    </div>
+                    <div class="font-black text-6xl text-white">↓</div>
+                    <div class="brutal-border-pink bg-brutal-black p-md text-white font-black uppercase w-full text-center">
+                        RAG: KnowledgeBase
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    <section class="asymmetric-grid items-center gap-xl mb-24">
+        <div class="col-span-12 lg:col-span-7 bg-white p-xl brutal-border-pink rotate-1">
+            <h2 class="text-5xl font-black uppercase italic text-black mb-md leading-none">Ready to evolve?</h2>
+            <p class="text-black font-bold text-xl mb-lg">Join the closed beta and deploy your first Agent in under 5 minutes.</p>
+            <button class="brutal-btn px-xl py-lg text-2xl w-full sm:w-auto">Get Started Free</button>
+        </div>
+        <div class="col-span-12 lg:col-span-5 brutal-border bg-brutal-charcoal p-xl -rotate-1 lg:-ml-12">
+            <div class="text-neon-lime mb-md">
+                <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+            </div>
+            <h4 class="text-3xl font-black uppercase text-white mb-sm">Enterprise Ready</h4>
+            <p class="font-bold text-gray-400">SOC-2 Type II, HIPAA, and GDPR ready data centers globally.</p>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-white text-black p-xl border-t-[8px] border-black">
+    <div class="max-w-full flex flex-col md:flex-row justify-between gap-xl">
+        <div>
+            <span class="font-black text-5xl italic uppercase tracking-tighter block mb-sm">HelpFlow AI</span>
+            <p class="font-black uppercase text-xs">© 2024 HelpFlow AI. Autonomous Intelligence // Enterprise Grade.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-lg font-black uppercase text-sm">
+            <a class="hover:text-neon-pink" href="#">Privacy</a>
+            <a class="hover:text-neon-blue" href="#">Terms</a>
+            <a class="hover:text-neon-lime" href="#">Security</a>
+            <a class="hover:text-neon-pink" href="#">Status</a>
+        </div>
+    </div>
+</footer>
+<script>
+    // Log simulator for brutalist console
+    const logsContainer = document.getElementById('agent-logs');
+    const logEntries = [
+        '<p class="text-white opacity-50">[09:42:06] > RECEIVED: "Tracking link?"</p>',
+        '<p class="font-black text-neon-lime underline italic">[THOUGHT] Context found. Re-retrieving tracking_url from FAISS.</p>',
+        '<div class="pl-md border-l-4 border-neon-blue py-sm bg-neon-blue/20"><p class="font-black">ACTION: RespondToUser</p><p class="text-xs">"Tracking: https://fdx.com/hf-9921"</p></div>'
+    ];
+    
+    let logIndex = 0;
+    setInterval(() => {
+        if (logIndex < logEntries.length && logsContainer) {
+            const div = document.createElement('div');
+            div.innerHTML = logEntries[logIndex];
+            div.className = 'border-l-4 border-white pl-2 py-1 bg-white/5 animate-pulse';
+            logsContainer.appendChild(div);
+            logIndex++;
+            setTimeout(() => div.classList.remove('animate-pulse'), 1000);
+        }
+    }, 4000);
+</script>
+</body>
+</html>

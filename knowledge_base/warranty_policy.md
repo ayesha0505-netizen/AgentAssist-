@@ -1,7 +1,7 @@
 # Limited Manufacturer Warranty Policy
 
 ## Standard 1-Year Limited Warranty
-All electronic products sold through AgentAssist AI include a **1-Year Limited Manufacturer Warranty** from the original date of purchase. This warranty covers defects in materials and quality under normal customer use.
+All electronic products sold through HelpFlow AI include a **1-Year Limited Manufacturer Warranty** from the original date of purchase. This warranty covers defects in materials and quality under normal customer use.
 
 ## What is Covered Under Warranty?
 - Internal hardware failure not caused by external impact or physical damage.

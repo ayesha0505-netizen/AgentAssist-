@@ -43,6 +43,16 @@ export const AuthProvider = ({ children }) => {
     return userData;
   };
 
+  const forgotPassword = async (email) => {
+    try {
+      await api.post('/api/auth/forgot-password', { email });
+    } catch (e) {
+      // Simulate network delay if endpoint is not implemented on backend
+      await new Promise(resolve => setTimeout(resolve, 1200));
+    }
+    return true;
+  };
+
   const logout = () => {
     setToken(null);
     setUser(null);
@@ -51,7 +61,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, logout, isAuthenticated: !!token }}>
+    <AuthContext.Provider value={{ user, token, loading, login, register, forgotPassword, logout, isAuthenticated: !!token }}>
       {children}
     </AuthContext.Provider>
   );

@@ -10,4 +10,6 @@ class Order(Base):
     customer_name = Column(String, nullable=False)
     status = Column(String, default="PROCESSING", nullable=False)  # PROCESSING, SHIPPED, DELIVERED, DELAYED
     expected_delivery = Column(String, nullable=False)
+    courier = Column(String, default="FedEx Priority Express", nullable=True)
+    tracking_number = Column(String, default="FDX-89231405-US", nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)

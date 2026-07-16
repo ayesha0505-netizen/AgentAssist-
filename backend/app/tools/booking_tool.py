@@ -10,7 +10,7 @@ class BookAppointmentInput(BaseModel):
 
 class BookAppointmentTool(BaseTool):
     name = "BookAppointmentTool"
-    description = "Books a mock appointment or technical consultation with a live specialist on the requested date and time."
+    description = "Books a support consultation or technical appointment with a live specialist on the requested date and time."
     args_schema = BookAppointmentInput
 
     def execute(self, arguments: Dict[str, Any], db: Any = None) -> Dict[str, Any]:

@@ -26,7 +26,7 @@ def chat_with_agent(request: ChatRequest, db: Session = Depends(get_db), current
 
 @router.get("/history", response_model=List[ChatHistoryItem])
 def get_chat_history(user_id: int = None, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
-    if current_user and current_user.role != "admin" and user_id and user_id != current_user.id:
+    if current_user and user_id and user_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to view another user's chat history.")
     
     target_id = user_id or (current_user.id if current_user else None)

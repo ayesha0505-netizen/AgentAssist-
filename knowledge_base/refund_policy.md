@@ -1,7 +1,7 @@
 # Refund and Return Policy
 
 ## 30-Day Return Window
-AgentAssist AI and our retail partners offer a comprehensive 30-day return window from the date your item is delivered. If 30 days have passed since your delivery date, we unfortunately cannot offer a full refund or exchange unless covered under our separate Warranty Policy.
+HelpFlow AI and our retail partners offer a comprehensive 30-day return window from the date your item is delivered. If 30 days have passed since your delivery date, we unfortunately cannot offer a full refund or exchange unless covered under our separate Warranty Policy.
 
 ## Eligibility Criteria for Refunds
 To be eligible for a return and full refund:

@@ -5,9 +5,9 @@ from app.database.init_db import init_db
 from app.rag.vector_store import get_vector_store
 
 app = FastAPI(
-    title="AgentAssist AI Backend API",
-    description="Agentic Customer Support System with Gemini ReAct Loop, RAG (FAISS), and Tool Calling.",
-    version="1.0.0"
+    title="HelpFlow AI Backend API",
+    description="Enterprise Autonomous Customer Engineering System with ReAct Loop, RAG (FAISS), and Tool Execution.",
+    version="2.0.0"
 )
 
 # Configure CORS for React frontend (Vite default is 5173)
@@ -29,7 +29,7 @@ app.include_router(knowledge_router)
 
 @app.on_event("startup")
 def on_startup():
-    print("Starting up AgentAssist AI Backend...")
+    print("Starting up HelpFlow AI Autonomous Backend Engine...")
     # Initialize SQLite tables and seed data
     init_db()
     # Build or load local FAISS index
@@ -43,7 +43,7 @@ def on_startup():
 def health_check():
     return {
         "status": "online",
-        "service": "AgentAssist AI Backend",
-        "version": "1.0.0",
+        "service": "HelpFlow AI Backend Engine",
+        "version": "2.0.0",
         "agentic_loop": "active"
     }

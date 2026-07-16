@@ -1,20 +1,20 @@
 # Company Information & Contact Directory
 
-## About AgentAssist AI
-AgentAssist AI is a next-generation technology demonstration project created for the **BCT Agentic AI Program**. Our mission is to revolutionize customer engagement by replacing rule-based chatbots with autonomous, reasoning-driven AI agents capable of multi-step problem solving, real-time database lookups, and empathetic customer communication.
+## About HelpFlow AI
+HelpFlow AI is an enterprise autonomous customer engineering platform designed to empower support teams with agentic ReAct reasoning, live database tool execution, and real-time policy retrieval. Our mission is to transform customer experience through sub-second automated resolutions and intelligent lifecycle orchestration.
 
 ## Corporate Headquarters
 - **Address**: 450 Innovation Parkway, Suite 300, Tech District, CA 94016, USA
 - **Main Phone**: +1 (800) 555-0199
-- **General Inquiry Email**: info@agentassist-ai.demo
+- **General Inquiry Email**: info@helpflow.ai
 
 ## Customer Support Operating Hours
-- **AgentAssist AI Assistant**: Available 24 hours a day, 7 days a week, 365 days a year for instant chat, order status checks, ticket creation, and policy information.
+- **HelpFlow AI Autonomous Agent**: Available 24 hours a day, 7 days a week, 365 days a year for instant chat, order status verification, automated ticket dispatch, and RAG policy information.
 - **Live Human Support Specialists**: Monday through Friday, 9:00 AM to 6:00 PM EST.
 - **Logistics & Shipping Operations**: Monday through Saturday, 8:00 AM to 8:00 PM EST.
 
 ## Dedicated Support Channels
-- **Order & Shipping Support**: support@agentassist-ai.demo
-- **Warranty & Repairs**: warranty@agentassist-ai.demo
-- **Billing & Returns**: billing@agentassist-ai.demo
-- **Technical & API Inquiries**: techsupport@agentassist-ai.demo
+- **Order & Shipping Support**: support@helpflow.ai
+- **Warranty & Repairs**: warranty@helpflow.ai
+- **Billing & Returns**: billing@helpflow.ai
+- **Technical & API Inquiries**: techsupport@helpflow.ai

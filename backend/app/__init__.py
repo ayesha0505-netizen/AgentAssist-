@@ -1,1 +1,1 @@
-# AgentAssist AI Backend Package
+# HelpFlow AI Backend Engine Package
